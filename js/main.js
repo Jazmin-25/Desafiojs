@@ -72,44 +72,67 @@ const listaProductos = [
         id: 1,
         producto: "mantequilla",
         marca: "Iberia",
-        expira: "2023-04-07"
+        fechaExpira: "2023-04-07"
     },
     {
         id: 2,
         producto: "leche",
         marca: "Alpura",
-        expira: "2023-04-09"
+        fechaExpira: "2023-04-09"
     },
     {
         id: 3,
         producto: "huevos",
         marca: "Rancho Grande",
-        expira: "2023-05-07"
+        fechaExpira: "2023-05-07"
     },
     {
         id: 4,
         producto: "pan",
         marca: "Bimbo",
-        expira: "2023-08-07"
+        fechaExpira: "2023-08-07"
     },
     {
         id: 5,
         producto: "cerveza",
         marca: "Coronona",
-        expira: "2023-09-17"
+        fechaExpira: "2023-09-17"
     },
     {
         id: 6,
         producto: "salsa picante",
         marca: "Valentina",
-        expira: "2024-04-07"
+        fechaExpira: "2024-04-07"
     },
 ]
-function buscarProductoId(id) {
+function buscarProductoId(id) {  //buscar por id
     return listaProductos.filter((producto) => producto.id === id);
 }
 console.log(buscarProductoId(3));
-function buscarMarca(marca){
+
+function buscarMarca(marca){ //buscar por marca
     return listaProductos.filter((producto) => producto.marca === marca);
 }
 console.log(buscarMarca("Iberia"));
+//buscar por rango de fecha
+
+function buscarProductocoPorFecha (fechaA, fechaB){
+    fechaA = new Date (fechaA);
+    fechaB = new Date (fechaB);
+    return listaProductos.filter((producto)=>{
+        const fechaExpira = new Date(producto.fechaExpira);
+        return fechaExpira <= fechaA && fechaExpira >= fechaB;
+    });
+}
+console.log(buscarProductocoPorFecha("2023-05-07", "2023-04-09"));
+
+console.log("Desafio 5 la fila ordenada")
+
+const arreglo = [];
+setInterval(agregarElemento, 4000, () => Math.floor(Math.random() *100));
+function agregarElemento(numeroAleatorio) {
+    const prioridad = numAleatorio();
+    arreglo.push(prioridad);
+    arreglo.sort((a, b)=> a -b);
+    console.log(arreglo);
+}
