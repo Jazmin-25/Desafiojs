@@ -127,12 +127,12 @@ function buscarProductocoPorFecha (fechaA, fechaB){
 console.log(buscarProductocoPorFecha("2023-05-07", "2023-04-09"));
 
 console.log("Desafio 5 la fila ordenada")
-
 const arreglo = [];
-setInterval(agregarElemento, 4000, () => Math.floor(Math.random() *100));
+setInterval(agregarElemento, 8000, () =>Math.floor(Math.random()* 100));
 function agregarElemento(numeroAleatorio) {
-    const prioridad = numAleatorio();
+    const prioridad = numeroAleatorio();
     arreglo.push(prioridad);
-    arreglo.sort((a, b)=> a -b);
+    arreglo.sort((a, b)=> a - b);
     console.log(arreglo);
+
 }
