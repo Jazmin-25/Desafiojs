@@ -133,6 +133,77 @@ function agregarElemento(numeroAleatorio) {
     const prioridad = numeroAleatorio();
     arreglo.push(prioridad);
     arreglo.sort((a, b)=> a - b);
-    console.log(arreglo);
+   // console.log(arreglo);
+}
+console.log("Desafio 6 el precio promedio")
+const casas = [{
+    id: 1,
+    habitaciones: 4,
+    tamaño: 200,
+    localidad:"San José",
+    precio: 150000
+},
+{
+    id: 2,
+    habitaciones: 2,
+    tamaño: 75,
+    localidad:"San José",
+    precio: 80000
+},
+{
+    id: 3,
+    habitaciones: 3,
+    tamaño: 100,
+    localidad:"San José",
+    precio: 80000
+},
+{
+    id: 4,
+    habitaciones: 3,
+    tamaño: 110,
+    localidad:"San José",
+    precio: 80000
+}, 
+{
+    id: 5,
+    habitaciones: 2,
+    tamaño: 75,
+    localidad:"San José",
+    precio: 80000,
+},
+{
+    id: 6,
+    habitaciones: 3,
+    tamaño: 110,
+    localidad:"Herendia",
+    precio: 85000
+},
+{
+    id: 7,
+    habitaciones: 2,
+    tamaño: 60,
+    localidad:"Cartago",
+    precio: 40000
+},
+{
+    id: 8,
+    habitaciones: 4,
+    tamaño: 200,
+    localidad:"Cartago",
+    precio: 140000
+}
+];
+const acumulado = {};
+for(const casa of casas){
+    if(!acumulado[casa.localidad]){
+        acumulado[casa.localidad] ={acumuladoPrecio: 0 , contador: 0};
+        }
+        acumulado[casa.localidad].acumuladoPrecio += casa.precio;
+        acumulado[casa.localidad].contador += 1;
+}
+console.log(acumulado);
 
+const localidades = Object.keys(acumulado);
+for(const localidad of localidades){
+    console.log(localidad +  " "  +  Math.floor(acumulado [localidad].acumuladoPrecio / acumulado[localidad].contador));
 }
