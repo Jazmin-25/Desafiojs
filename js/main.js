@@ -224,3 +224,21 @@ const ordenados = apellidosNombre.sort((a, b)=>{
   return apellidosNombreA < apellidosNombreB? -1 : apellidosNombreA > apellidosNombreB? 1 : 0;
 });
 console.log(ordenados);
+console.log("Desafio 8 Carrito de compras")
+class Producto{
+    _nombre;
+    _precio;
+    _fechaVencimiento;
+    constructor(nombre, precio, _fechaVencimiento){
+        this._nombre = nombre;
+        this._precio = precio;
+        this. _fechaVencimiento = new Date (fechaVencimiento);
+    }
+}
+function carritocompra(productos){
+    const hoy = new Date();
+    const productosValidos = productos.filter((producto) =>producto._fechaVencimiento > hoy);
+    return productosValidos.reduce((acumulador,producto) => acumulador += producto._precio, 0);
+}
+console.log(carritocompra);
+console.log("Desafio 9 Calculadora");
