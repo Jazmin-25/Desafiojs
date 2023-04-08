@@ -207,3 +207,20 @@ const localidades = Object.keys(acumulado);
 for(const localidad of localidades){
     console.log(localidad +  " "  +  Math.floor(acumulado [localidad].acumuladoPrecio / acumulado[localidad].contador));
 }
+console.log("Desafio 7 orden alfabetico")
+const apellidosNombre = [
+    "Ariadna Islas",
+    "Francisco Vega",
+    "Patricia Huerta",
+    "Emma Gonzalez",
+    "Carlos Camilo",
+    "Yesenia Solano",
+    "Manuel Hernandez",
+    "Pedro García"
+];
+const ordenados = apellidosNombre.sort((a, b)=>{
+  const apellidosNombreA = a.split(" ")[0];  
+  const apellidosNombreB = b.split(" ")[0];  
+  return apellidosNombreA < apellidosNombreB? -1 : apellidosNombreA > apellidosNombreB? 1 : 0;
+});
+console.log(ordenados);
